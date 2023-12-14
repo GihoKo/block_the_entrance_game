@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔫입구막기 게임</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <main>
+        <div class="battleground"></div>
+        <div class="strategy">
+            <div class="strategy-source">
+                <div class="supply-source">
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/mineral.png" class="supply-source__mineral" />
+                    <img src="./img/command_center.png" class="supply-source__command-center" />
+                    <img src="./img/gas.png" class="supply-source__gas" />
+                    <img src="./img/gas.png" class="supply-source__gas" />
+                    <img src="./img/gas.png" class="supply-source__gas" />
+
+                </div>
+                <div class="workman">
+                    <div class="workman-mineral">
+                        <div>미네랄 일꾼</div>
+                        <div>
+                            <button class="workman-btn" id="workman-mineral-add">추가</button>
+                        </div>
+                        <div>
+                            <button class="workman-btn" id="workman-mineral-remove">삭제</button>
+                        </div>
+                    </div>
+                    <div class="workman-gas">
+                        <div>가스 일꾼</div>
+                        <div>
+                            <button class="workman-btn" id="workman-gas-add">추가</button>
+                        </div>
+                        <div>
+                            <button class="workman-btn" id="workman-gas-remove">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource">
+                    <div class="resource-reserves">
+                        <div>미네랄</div>
+                        <div id="total_mineral">0</div>
+                    </div>
+                    <div class="resource-reserves">
+                        <div>가스</div>
+                        <div id="total_gas">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="towers">
+                <div class="tower singleShot">
+                    <div class="tower__cover" data-tower="singleshot">
+                        <img src="./img/singleshot.png">
+                        <div><img src="./img/mineral.png" alt="mineral">100</div>
+                    </div>
+                    <div class="tower__description">
+                        포탄을 한번 쏜다.
+                    </div>
+                </div>
+                <div class="tower doubleShot">
+                    <div class="tower__cover" data-tower="doubleshot">
+                        <img src="./img/doubleshot.png">
+                        <div><img src="./img/mineral.png" alt="mineral">200</div>
+                    </div>
+                    <div class="tower__description">
+                        포탄을 두번 연속으로 쏜다.
+                    </div>
+                </div>
+                <div class="tower wall">
+                    <div class="tower__cover" data-tower="wall">
+                        <img src="./img/wall.png">
+                        <div><img src="./img/mineral.png" alt="mineral">200</div>
+                    </div>
+                    <div class="tower__description">
+                        벽이다. 유닛들이 못지나가게 한다
+                    </div>
+                </div>
+                <div class="tower rangeShot">
+                    <div class="tower__cover" data-tower="rangeshot">
+                        <img src="./img/rangeshot.png">
+                        <div>
+                            <img src="./img/mineral.png" alt="mineral">400
+                            <img src="./img/gas.png" alt="gas">100
+                        </div>
+                    </div>
+                    <div class="tower__description">
+                        한번에 포탄을 4발 쏜다.
+                    </div>
+                </div>
+                <div class="tower laserShot">
+                    <div class="tower__cover" data-tower="lasershot">
+                        <img src="./img/lasershot.png">
+                        <div>
+                            <img src="./img/mineral.png" alt="mineral">1000
+                            <img src="./img/gas.png" alt="gas">500
+                        </div>
+                    </div>
+                    <div class="tower__description">
+                        레이저를 쏜다.
+                    </div>
+                </div>
+                <div class="tower slow">
+                    <div class="tower__cover" data-tower="slow">
+                        <img src="./img/slow.png">
+                        <div>
+                            <img src="./img/mineral.png" alt="mineral">500
+                            <img src="./img/gas.png" alt="gas">150
+                        </div>
+                    </div>
+                    <div class="tower__description">
+                        유닛들이 느리게 이동하게 한다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="addTower.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+@import url(./reset.css);
+
+main {
+    width: 1440px;
+    height: 560px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.battleground {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 10px 0px;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    background-color: black;
+    cursor: pointer;
+}
+
+.battleground__cell:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.battleground__cell {
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.battleground__cell>div {
+    width: 100%;
+    height: 100%;
+}
+
+.battleground__cell>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.strategy {
+    width: 50%;
+    height: 100%;
+}
+
+.strategy-source {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-areas:
+        'supply-source supply-source workman'
+        'supply-source supply-source resource';
+}
+
+.supply-source {
+    grid-area: supply-source;
+    width: 480px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./img/supply-source-background.png);
+}
+
+.supply-source__mineral:nth-of-type(1) {
+    position: absolute;
+    top: 32px;
+    left: 104px;
+}
+
+.supply-source__mineral:nth-of-type(2) {
+    position: absolute;
+    top: 60px;
+    left: 72px;
+}
+
+.supply-source__mineral:nth-of-type(3) {
+    position: absolute;
+    top: 100px;
+    left: 72px;
+}
+
+.supply-source__mineral:nth-of-type(4) {
+    position: absolute;
+    top: 136px;
+    left: 72px;
+}
+
+.supply-source__mineral:nth-of-type(5) {
+    position: absolute;
+    top: 172px;
+    left: 72px;
+}
+
+.supply-source__mineral:nth-of-type(6) {
+    position: absolute;
+    top: 208px;
+    left: 104px;
+}
+
+.supply-source__command-center {
+    width: 120px;
+    height: 120px;
+}
+
+.supply-source__gas {
+    position: absolute;
+}
+
+.supply-source__gas:nth-of-type(8) {
+    top: 48px;
+    right: 104px;
+}
+
+.supply-source__gas:nth-of-type(9) {
+    top: 128px;
+    right: 80px;
+}
+
+.supply-source__gas:nth-of-type(10) {
+    top: 208px;
+    right: 104px;
+}
+
+.worker {
+    transition: all 0.5s;
+}
+
+.workman {
+    grid-area: workman;
+    width: 240px;
+}
+
+.workman>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+}
+
+.workman-btn {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+
+.resource {
+    grid-area: resource;
+    width: 240px;
+}
+
+.resource {
+    display: flex;
+}
+
+.resource>div {
+    width: 50%;
+}
+
+.resource-reserves>div:nth-of-type(1),
+.resource-reserves>div:nth-of-type(2) {
+    height: 50%;
+}
+
+.towers {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-areas:
+        'singleShot doubleShot wall'
+        'rangeShot laserShot slow';
+}
+
+.singleShot {
+    grid-area: singleShot;
+}
+
+.doubleShot {
+    grid-area: doubleShot;
+}
+
+.wall {
+    grid-area: wall;
+}
+
+.rangeShot {
+    grid-area: rangeShot;
+}
+
+.laserShot {
+    grid-area: laserShot;
+}
+
+.slow {
+    grid-area: slow;
+}
+
+.tower {
+    box-sizing: border-box;
+    width: 240px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;
+
+    position: relative;
+    border-radius: 8px;
+}
+
+.tower__cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.tower.click .tower__cover {
+    transform: translateX(-50%);
+}
+
+.tower.click .tower__cover>div,
+.tower.click .tower__cover>img {
+    transform: translateX(+100%);
+}
+
+.tower__cover>div {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s;
+}
+
+.tower__cover>img {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s;
+}
+
+.tower__description {
+    width: 50%;
+    background-color: black;
+    color: white;
+}
