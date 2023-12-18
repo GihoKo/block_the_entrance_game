@@ -22,6 +22,14 @@
                     <div id="supply-source_command-center">
                         <img src="./img/command_center.png" alt="command-center">
                     </div>
+                    <div class="command__modal">
+                        <div class="command__modal--img-Worker mineral"><img src="./img/worker_minera.png" alt="workman-mineral"></div>
+                        <div class="command__modal--img-Worker gas"><img src="./img/worker_gas.png" alt="workman-gas"></div>
+                        <div class="command__modal--btn command__modal--btn-increase mineral"><button>추가</button></div>
+                        <div class="command__modal--btn command__modal--btn-decrease mineral"><button>제거</button></div>
+                        <div class="command__modal--btn command__modal--btn-increase gas"><button>추가</button></div>
+                        <div class="command__modal--btn command__modal--btn-decrease gas"><button>제거</button></div>
+                    </div>
 
 
 
@@ -104,10 +112,12 @@
                 <button class="defeat__retry-button" id="retry-button">재도전</button>
             </div>
     </main>
+    <script type="module" src="workerShopModal.js"></script>
     <script type="module" src="addTower.js"></script>
     <script type="module" src="battlegroundRender.js"></script>
     <script type="module" src="enemy.js"></script>
     <script type="module" src="defeat.js"></script>
+    <script type="module" src="battlegroundVariable.js"></script>
 </body>
 
 </html>

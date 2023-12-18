@@ -1,6 +1,7 @@
 import { Chimpanzee } from './enemyData.js'
 import { battlegroundFeild } from './fieldData.js'
 import { enterEntrance, exitEntrance } from './battlegroundRender.js';
+
 // 적 생성 함수
 let enemyQueue = [];
 let gameTimeStamp = document.querySelector('.status-bar__time-stamp')
@@ -12,16 +13,21 @@ const performAnimation = (timeStamp) => {
     // status bar time stamp
     gameTimeStamp.textContent = `TIME : ${Math.floor(timeStamp / 1000)}초`;
     // 실시간 enemy 렌더링
-    enemyQueue.forEach((enemy,i)=>{
+    enemyQueue.forEach((enemy, i) => {
         const nowEnemy = document.querySelector(`#enemy-${i}`);
         nowEnemy.style.left = `${enemy.positionX}px`;
         nowEnemy.style.top = `${enemy.positionY}px`;
         // 만약 exitEntrance에 닿으면 remove()
-        if(document.querySelector(`#enemy-${i}`).getBoundingClientRect().right > 895) {
+        if (document.querySelector(`#enemy-${i}`).getBoundingClientRect().right > 895) {
             document.querySelector('.defeat').style.display = 'flex';
+            clearInterval(newEnemyIntervalId);
             return defeat();
         }
 
+
+
+
+        
 
     })
 
@@ -33,7 +39,7 @@ const performAnimation = (timeStamp) => {
 }
 requestAnimationFrame(performAnimation);
 
-setInterval(() => {
+const newEnemyIntervalId = setInterval(() => {
     // new enemy
     let newChimpanzee = new Chimpanzee(enemyId, 17, 17);
     newChimpanzee.move();
@@ -48,7 +54,9 @@ setInterval(() => {
     enterEntrance.append(enemyDiv);
 
     enemyId++;
-}, 2000)
+}, 10000000)
+
+
 
 
 

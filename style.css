@@ -126,6 +126,79 @@ main {
     height: 120px;
 }
 
+.command__modal {
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 120px;
+    height: 80px;
+    border: 2px solid var(--black-1);
+    background-color: var(--black-1);
+    color: var(--black-1);
+    font-size: 10px;
+    font-weight: 700;
+    display: none;
+    grid-template-areas:
+        'mineralWorker mineralWorkerincrease mineralWorkerdecrease'
+        'gasWorker gasWorkerincrease gasWorkerdecrease'
+    ;
+    gap: 2px;
+    position: absolute;
+    top: 90px;
+    left: 272px;
+}
+
+.command__modal.on {
+    display: grid;
+}
+
+.command__modal--img-Worker.mineral {
+    grid-area: mineralWorker;
+}
+
+.command__modal--img-Worker.gas {
+    grid-area: gasWorker;
+}
+
+.command__modal--img-Worker.mineral,
+.command__modal--img-Worker.gas {
+    border-radius: 4px;
+    width: 37px;
+    height: 37px;
+    background-color: var(--black-4);
+}
+
+.command__modal--img-Worker>img {
+    width: 100%;
+    height: 100%;
+}
+
+.command__modal--btn-increase.mineral {
+    grid-area: mineralWorkerincrease;
+}
+
+.command__modal--btn-decrease.mineral {
+    grid-area: mineralWorkerdecrease;
+}
+
+.command__modal--btn-increase.gas {
+    grid-area: gasWorkerincrease;
+}
+
+.command__modal--btn-decrease.gas {
+    grid-area: gasWorkerdecrease;
+}
+
+.command__modal--btn {
+    border-radius: 4px;
+    width: 37px;
+    height: 37px;
+    background-color: var(--black-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .towers {
     display: grid;
     gap: 8px;
