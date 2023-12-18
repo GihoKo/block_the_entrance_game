@@ -10,9 +10,21 @@
 body {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
     background-color: var(--black-3);
+}
+
+header {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.status-bar {
+    width: 1368px;
+    height: 100px;
+    background-color: var(--black-1);
+    border: 3px solid var(--black-4);
+    border-radius: 8px;
 }
 
 main {
@@ -22,12 +34,13 @@ main {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 32px;
+    position: relative;
 }
 
 .battleground {
     border-radius: 8px;
-    
     border: 3px solid var(--black-4);
     overflow: hidden;
     width: 840px;
@@ -36,6 +49,7 @@ main {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(12, 1fr);
     cursor: pointer;
+    position: relative;
 }
 
 .battleground__cell:hover {
@@ -47,17 +61,39 @@ main {
     box-sizing: border-box;
     width: 70px;
     height: 70px;
+    position: relative;
 }
 
-.battleground__cell>div {
+
+/* enemy */
+
+.enemy-container {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    z-index: 10;
+    transition: all 1s;
+}
+
+.enemy.chimpanzee {
     width: 100%;
     height: 100%;
 }
 
-.battleground__cell img {
-    width: 70px;
-    height: 70px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .supply-source {
     border: 3px solid var(--black-4);
@@ -154,4 +190,46 @@ main {
     font-size: 12px;
     font-weight: 700;
     color: var(--black-4);
+}
+
+.defeat {
+    width: 600px;
+    height: 600px;
+    border: 3px solid #0C0D0D;
+    border-radius: 8px;
+
+    background-color: #D8D7D7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+}
+
+.defeat.off {
+    display: none;
+}
+
+.defeat__text {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.defeat_img {
+    width: 300px;
+    height: 300px;
+}
+
+.defeat__retry-button {
+    border-radius: 8px;
+    border: 3px solid #0C0D0D;
+    padding: 16px 32px;
+    font-size: 32px;
 }

@@ -9,6 +9,11 @@
 </head>
 
 <body>
+    <header>
+        <div class="status-bar">
+            <div class="status-bar__time-stamp"></div>
+        </div>
+    </header>
     <main>
         <div class="battleground"></div>
         <div class="strategy">
@@ -93,9 +98,16 @@
                     </div>
                 </div>
             </div>
+            <div class="defeat off">
+                <span class="defeat__text">패배했습니다! ㅋㅋ!!</span>
+                <img src="./img/defeat.jpeg" alt="defeat" class="defeat_img">
+                <button class="defeat__retry-button" id="retry-button">재도전</button>
+            </div>
     </main>
     <script type="module" src="addTower.js"></script>
     <script type="module" src="battlegroundRender.js"></script>
+    <script type="module" src="enemy.js"></script>
+    <script type="module" src="defeat.js"></script>
 </body>
 
 </html>
