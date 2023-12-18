@@ -1,6 +1,6 @@
 import { SingleShot, DoubleShot, Wall, RangeShot, LaserShot, Slow, towers as towerlist } from "./towers.js"
-import { battlegroundFeild } from "./battlegroundRender.js";
-import { entrances, roads } from './fieldData.js'
+import { battlegroundFeild } from "../BattleGround/battlegroundRender.js";
+import { entrances, roads } from '../BattleGround/fieldData.js'
 //   towerCard 영역
 const towerCardContainer = document.querySelector('.towers');
 const towerCards = document.querySelectorAll('.tower');

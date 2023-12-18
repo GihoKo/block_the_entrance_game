@@ -4,6 +4,7 @@ const mineralWorkmanAdd = document.querySelector('#workman-mineral-add');
 const mineralWorkmanRemove = document.querySelector('#workman-mineral-remove');
 const gasWorkmanAdd = document.querySelector('#workman-gas-add');
 const gasWorkmanRemove = document.querySelector('#workman-gas-remove');
+
 let mineralPrev = document.querySelector('#total_mineral');
 let gasPrev = document.querySelector('#total_gas');
 let mineralWorkman = 0;
