@@ -23,18 +23,7 @@ const performAnimation = (timeStamp) => {
             clearInterval(newEnemyIntervalId);
             return defeat();
         }
-
-
-
-
-        
-
     })
-
-
-
-
-
     requestAnimationFrame(performAnimation);
 }
 requestAnimationFrame(performAnimation);
@@ -54,7 +43,7 @@ const newEnemyIntervalId = setInterval(() => {
     enterEntrance.append(enemyDiv);
 
     enemyId++;
-}, 10000000)
+}, 3000)
 
 
 

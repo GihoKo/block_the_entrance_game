@@ -27,6 +27,10 @@ header {
     border-radius: 8px;
 }
 
+.reserves {
+    height: 30px;
+}
+
 main {
     padding: 35px 36px;
     width: 1440px;
@@ -81,20 +85,6 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .supply-source {
     border: 3px solid var(--black-4);
     border-radius: 8px;
@@ -119,11 +109,7 @@ main {
 
 #supply-source_command-center img:hover {
     border: 3px solid var(--black-1);
-}
-
-.supply-source__command-center {
-    width: 120px;
-    height: 120px;
+    border-radius: 8px;
 }
 
 .command__modal {
