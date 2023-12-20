@@ -43,7 +43,7 @@ const newEnemyIntervalId = setInterval(() => {
     enterEntrance.append(enemyDiv);
 
     enemyId++;
-}, 3000)
+}, 1000)
 
 
 

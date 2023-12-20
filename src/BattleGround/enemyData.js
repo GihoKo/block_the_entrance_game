@@ -3,7 +3,7 @@ class Chimpanzee {
         this.value = value;
         this.name = 'chimpanzee';
         this.img = './img/chimpanzee.png';
-        this.speed = 100;
+        this.speed = 20;
         this.health = 40;
         this.positionX = positionX;
         this.positionY = positionY;

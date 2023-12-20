@@ -13,6 +13,7 @@ const workerShopModalHandler = function () {
 }
 
 commandCenter.addEventListener('click', (e) => { workerShopModalHandler() })
+// workerHandler.js 이동
 mineralWorkerIncreaseBtn.addEventListener('click', (e) => { workerHandler('mineral', 'increase') })
 mineralWorkerDecreaseBtn.addEventListener('click', (e) => { workerHandler('mineral', 'decrease') })
 gasWorkerIncreaseBtn.addEventListener('click', (e) => { workerHandler('gas', 'increase') })
