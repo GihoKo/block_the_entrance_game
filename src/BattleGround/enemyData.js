@@ -22,7 +22,7 @@ class Chimpanzee {
       this.positionX += this.speed;
     }, 1000);
   }
-  hitted(damage) {
+  damaged(damage) {
     this.health -= damage;
     if (this.health <= 0) {
       this.remove();
@@ -52,7 +52,7 @@ class Orangutan {
       this.positionX += this.speed;
     }, 1000);
   }
-  hitted(damage) {
+  damaged(damage) {
     this.health -= damage;
     if (this.health <= 0) {
       this.remove();
@@ -82,7 +82,7 @@ class Gorilla {
       this.positionX += this.speed;
     }, 1000);
   }
-  hitted(damage) {
+  damaged(damage) {
     this.health -= damage;
     if (this.health <= 0) {
       this.remove();

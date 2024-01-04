@@ -23,6 +23,17 @@ const clickTowerCoverHandler = function (e) {
 
 towerCardContainer.addEventListener("click", clickTowerCoverHandler);
 
+const createTowerInstance = (e, currentBtn) => {
+  if (currentBtn === "singleshot") {
+    const singleshot = new SingleShot();
+    singleshot.attack(e.target);
+  }
+  if (currentBtn === "rangeshot") {
+    const rangeshot = new RangeShot();
+    rangeshot.attack(e.target);
+  }
+};
+
 // tower card를 클릭한 상태에서 battleground를 클릭하면 타워가 생긴다
 const buildTowerInBattlegound = function (e) {
   // 포탑을 짓는 곳이 길이면 불가
@@ -43,13 +54,7 @@ const buildTowerInBattlegound = function (e) {
   const div = document.createElement("div");
   div.innerHTML = `<img src="./img/${currentBtn}.png">`;
   e.target.append(div);
-  e.target.classList.add(`${currentBtn}`);
-  e.target.classList.add("towerBuilt");
-  if ((currentBtn = "singleshot")) {
-    const singleshot = new SingleShot();
-    singleshot.attack(e.target);
-  }
-  // cell의
+  createTowerInstance(e, currentBtn);
 };
 
 // 타워 카드를 누르고 필드를 누르면 타워가 생성되는 것 까지 구현 (231213)

@@ -79,7 +79,8 @@ main {
   background-color: black;
 }
 
-.bombFire {
+.singleshotBombFire,
+.rangeshotBombFire {
   width: 35px;
   height: 35px;
   background-image: url("./img/bombFire.png");
@@ -92,17 +93,8 @@ main {
   0% {
     opacity: 0;
   }
-  25% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.3;
-  }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
