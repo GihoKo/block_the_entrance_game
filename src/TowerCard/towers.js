@@ -1,5 +1,4 @@
 import { enemyQueue } from "../BattleGround/enemy.js";
-import { entrances } from "../BattleGround/fieldData.js";
 const towers = ["singleshot", "doubleshot", "wall", "rangeshot", "lasershot", "slow"];
 
 class SingleShot {
@@ -9,13 +8,12 @@ class SingleShot {
     this.mineral = 100;
     this.gas = 0;
     this.attackIntervalId = null;
-    this.moveBombIntervalId = null;
   }
   remove() {
     console.log("delete");
   }
   attack() {
-    // 500초 마다 포탄 발사
+    // 1.5초 마다 포탄 발사
     this.attackIntervalId = setInterval(() => {
       const bombFire = document.createElement("img");
       bombFire.classList.add("bombFire");
@@ -28,16 +26,14 @@ class SingleShot {
           // 첫번째 적에 폭발 이미지 부착
           firstEnemy.insertBefore(bombFire, firstEnemy.firstChild);
           // 0.2 초후 폭발 이미지 제거
-          (function () {
-            setTimeout(() => {
-              firstEnemy.firstChild.remove();
-            }, 200);
-          })();
+          setTimeout(() => {
+            firstEnemy.firstChild.remove();
+          }, 500);
         }, 500);
         // 적의 hp를 줄인다.
         enemyQueue[0].hitted(10);
       }
-    }, 1000);
+    }, 1500);
   }
 }
 

@@ -1,329 +1,344 @@
 @import url(./reset.css);
 
 * {
-    --black-1: #D8D7D7;
-    --black-2: #A6A5A4;
-    --black-3: #3C3D3E;
-    --black-4: #0C0D0D;
+  --black-1: #d8d7d7;
+  --black-2: #a6a5a4;
+  --black-3: #3c3d3e;
+  --black-4: #0c0d0d;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--black-3);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black-3);
 }
 
 header {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
 }
 
 .status-bar {
-    width: 1368px;
-    height: 100px;
-    background-color: var(--black-1);
-    border: 3px solid var(--black-4);
-    border-radius: 8px;
+  width: 1368px;
+  height: 100px;
+  background-color: var(--black-1);
+  border: 3px solid var(--black-4);
+  border-radius: 8px;
 }
 
 .reserves {
-    height: 30px;
+  height: 30px;
 }
 
 main {
-    padding: 35px 36px;
-    width: 1440px;
-    height: 560px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    position: relative;
+  padding: 35px 36px;
+  width: 1440px;
+  height: 560px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  position: relative;
 }
 
 .battleground {
-    border-radius: 8px;
-    border: 3px solid var(--black-4);
-    overflow: hidden;
-    width: 840px;
-    height: 490px;
-    display: grid;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(12, 1fr);
-    cursor: pointer;
-    position: relative;
+  border-radius: 8px;
+  border: 3px solid var(--black-4);
+  overflow: hidden;
+  width: 840px;
+  height: 490px;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  cursor: pointer;
+  position: relative;
 }
 
 .battleground__cell:hover {
-    background-color: rgb(65, 65, 65);
+  background-color: rgb(65, 65, 65);
 }
 
 .battleground__cell {
-    background-color: var(--black-1);
-    box-sizing: border-box;
-    width: 70px;
-    height: 70px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--black-1);
+  box-sizing: border-box;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .battleground__cell.entrance {
-    background-image: url('./img/entrance.png');
+  background-image: url("./img/entrance.png");
 }
 
 .battleground__cell.road {
-    background-color: black;
+  background-color: black;
 }
 
 .bombFire {
-    width: 35px;
-    height: 35px;
-    background-image: url('./img/bombFire.png');
-    z-index: 9999;
-    transition: all 1s;
-    position: absolute;
+  width: 35px;
+  height: 35px;
+  background-image: url("./img/bombFire.png");
+  z-index: 9999;
+  position: absolute;
+  animation: bombFire 0.5s;
+}
+
+@keyframes bombFire {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* enemy */
 
 .enemy-container {
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    z-index: 10;
-    transition: all 1s;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  z-index: 10;
+  transition: all 1s;
 }
 
-.enemy.chimpanzee {
-    width: 100%;
-    height: 100%;
+.enemy.chimpanzee,
+.enemy.orangutan,
+.enemy.gorilla {
+  width: 100%;
+  height: 100%;
 }
-
 
 .supply-source {
-    border: 3px solid var(--black-4);
-    border-radius: 8px;
-    box-sizing: border-box;
-    width: 496px;
-    height: 238px;
-    position: relative;
-    background: url(./img/supply_source_area.png);
-    background-color: var(--black-4);
+  border: 3px solid var(--black-4);
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 496px;
+  height: 238px;
+  position: relative;
+  background: url(./img/supply_source_area.png);
+  background-color: var(--black-4);
 }
 
 #supply-source_command-center {
-    width: 114px;
-    height: 102px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 72px;
-    left: 152px;
+  width: 114px;
+  height: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 72px;
+  left: 152px;
 }
 
 #supply-source_command-center img:hover {
-    border: 3px solid var(--black-1);
-    border-radius: 8px;
+  border: 3px solid var(--black-1);
+  border-radius: 8px;
 }
 
 .command__modal {
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: 120px;
-    height: 80px;
-    border: 2px solid var(--black-1);
-    background-color: var(--black-1);
-    color: var(--black-1);
-    font-size: 10px;
-    font-weight: 700;
-    display: none;
-    grid-template-areas:
-        'mineralWorker mineralWorkerincrease mineralWorkerdecrease'
-        'gasWorker gasWorkerincrease gasWorkerdecrease'
-    ;
-    gap: 2px;
-    position: absolute;
-    top: 81px;
-    left: 272px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 120px;
+  height: 80px;
+  border: 2px solid var(--black-1);
+  background-color: var(--black-1);
+  color: var(--black-1);
+  font-size: 10px;
+  font-weight: 700;
+  display: none;
+  grid-template-areas:
+    "mineralWorker mineralWorkerincrease mineralWorkerdecrease"
+    "gasWorker gasWorkerincrease gasWorkerdecrease";
+  gap: 2px;
+  position: absolute;
+  top: 81px;
+  left: 272px;
 }
 
 .command__modal.on {
-    display: grid;
+  display: grid;
 }
 
 .command__modal--img-Worker.mineral {
-    grid-area: mineralWorker;
+  grid-area: mineralWorker;
 }
 
 .command__modal--img-Worker.gas {
-    grid-area: gasWorker;
+  grid-area: gasWorker;
 }
 
 .command__modal--img-Worker.mineral,
 .command__modal--img-Worker.gas {
-    border-radius: 4px;
-    width: 37px;
-    height: 37px;
-    background-color: var(--black-4);
+  border-radius: 4px;
+  width: 37px;
+  height: 37px;
+  background-color: var(--black-4);
 }
 
-.command__modal--img-Worker>img {
-    width: 100%;
-    height: 100%;
+.command__modal--img-Worker > img {
+  width: 100%;
+  height: 100%;
 }
 
 .command__modal--btn-increase.mineral {
-    grid-area: mineralWorkerincrease;
+  grid-area: mineralWorkerincrease;
 }
 
 .command__modal--btn-decrease.mineral {
-    grid-area: mineralWorkerdecrease;
+  grid-area: mineralWorkerdecrease;
 }
 
 .command__modal--btn-increase.gas {
-    grid-area: gasWorkerincrease;
+  grid-area: gasWorkerincrease;
 }
 
 .command__modal--btn-decrease.gas {
-    grid-area: gasWorkerdecrease;
+  grid-area: gasWorkerdecrease;
 }
 
 .command__modal--btn {
-    border-radius: 4px;
-    width: 37px;
-    height: 37px;
-    background-color: var(--black-4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border-radius: 4px;
+  width: 37px;
+  height: 37px;
+  background-color: var(--black-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .worker {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    transition: all 1s;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transition: all 1s;
 }
 
-.worker>img {
-    width: 100%;
-    height: 100%;
+.worker > img {
+  width: 100%;
+  height: 100%;
 }
 
 .towers {
-    display: grid;
-    gap: 8px;
-    grid-template-areas:
-        'singleShot doubleShot wall'
-        'rangeShot laserShot slow';
-    margin-top: 32px;
+  display: grid;
+  gap: 8px;
+  grid-template-areas:
+    "singleShot doubleShot wall"
+    "rangeShot laserShot slow";
+  margin-top: 32px;
 }
 
 .singleShot {
-    grid-area: singleShot;
+  grid-area: singleShot;
 }
 
-
-
 .doubleShot {
-    grid-area: doubleShot;
+  grid-area: doubleShot;
 }
 
 .wall {
-    grid-area: wall;
+  grid-area: wall;
 }
 
 .rangeShot {
-    grid-area: rangeShot;
+  grid-area: rangeShot;
 }
 
 .laserShot {
-    grid-area: laserShot;
+  grid-area: laserShot;
 }
 
 .slow {
-    grid-area: slow;
+  grid-area: slow;
 }
 
 .tower {
-    border: 3px solid var(--black-4);
-    box-sizing: border-box;
-    width: 160px;
-    height: 106px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    background-color: var(--black-1);
-    position: relative;
-    border-radius: 8px;
+  border: 3px solid var(--black-4);
+  box-sizing: border-box;
+  width: 160px;
+  height: 106px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--black-1);
+  position: relative;
+  border-radius: 8px;
 }
 
-.tower>img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: 0.5s all;
+.tower > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s all;
 }
 
-.tower.click>img {
-    transform: translateX(-100%);
+.tower.click > img {
+  transform: translateX(-100%);
 }
 
 .tower__description {
-    width: 100%;
-    padding: 16px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--black-4);
+  width: 100%;
+  padding: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black-4);
 }
 
 .defeat {
-    width: 600px;
-    height: 600px;
-    border: 3px solid #0C0D0D;
-    border-radius: 8px;
+  width: 600px;
+  height: 600px;
+  border: 3px solid #0c0d0d;
+  border-radius: 8px;
 
-    background-color: #D8D7D7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
+  background-color: #d8d7d7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 }
 
 .defeat.off {
-    display: none;
+  display: none;
 }
 
 .defeat__text {
-    font-size: 48px;
-    font-weight: 700;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .defeat_img {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 .defeat__retry-button {
-    border-radius: 8px;
-    border: 3px solid #0C0D0D;
-    padding: 16px 32px;
-    font-size: 32px;
+  border-radius: 8px;
+  border: 3px solid #0c0d0d;
+  padding: 16px 32px;
+  font-size: 32px;
 }
